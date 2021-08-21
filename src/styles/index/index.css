@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Corben:wght@700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 110%;
+}
+
+@media (max-width: 1350px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 50%;
+  }
+}
+/*# sourceMappingURL=index.css.map */

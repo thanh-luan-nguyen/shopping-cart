@@ -1,24 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { createGlobalStyle } from 'styled-components'
+import './styles/reset.css'
+import './styles/index/index.css'
+import { configureStore } from '@reduxjs/toolkit'
+import productsReducer from './features/products'
+import { Provider } from 'react-redux'
 
-const GlobalStyle = createGlobalStyle`
-    *, *::before, *::after {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-      word-wrap: break-word;
-    }
-    body{
-      background-color: aquamarine;
-    }
-  `
+const store = configureStore({
+  reducer: {
+    products: productsReducer,
+  },
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
