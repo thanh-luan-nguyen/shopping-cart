@@ -84,7 +84,7 @@ const Wrapper = styled.main`
   background-position: right;
   @media (max-width: ${globalValues.media_query_mobile_length}) {
     background-position: 87% 0%;
-    height: calc(100vh - 9.3rem);
+    height: calc(100vh - 9.8rem);
   }
 
   ${globalValues.page_switch}

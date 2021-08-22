@@ -1,27 +1,19 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { ADD_TO_CART } from '../features/shop'
 import styled from 'styled-components'
 import globalValues from '../utils/globalValues'
 import Footer from './Footer'
 
-interface Product {
-  id: number
-  title: string
-  price: number
-  image: string
-  description: string
-}
-
 export default function Products() {
-  const products: Array<Product> = useSelector(
-    ({ products }: { products: any }) => products.value
-  )
+  const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
+  const dispatch = useDispatch()
   /* query */
   const page = globalValues.useQuery().get('page')
   /* query END */
   const renderProducts = products
-    .filter((p, i) => (page ? i > 5 : i <= 5))
-    .map(p => (
+    .filter((p: any, i: number) => (page ? i > 5 : i <= 5))
+    .map((p: any) => (
       <div className='card' key={p.id}>
         <div className='image'>
           <img src={p.image} alt={p.title.slice(0, 10)} />
@@ -34,11 +26,14 @@ export default function Products() {
 
           <div>
             <button>View details</button>
-            <button>Add to cart</button>
+            <button onClick={() => dispatch(ADD_TO_CART(p.id))}>
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
     ))
+
   return (
     <Wrapper>
       <div className='content'>
@@ -140,8 +135,10 @@ const Wrapper = styled.div`
                 padding: 0.7rem 0.9rem;
                 font-weight: 500;
               }
-
-              ${globalValues.button_hover_effect}
+              &:hover {
+                cursor: pointer;
+                background-color: #000000b0;
+              }
             }
           }
         }

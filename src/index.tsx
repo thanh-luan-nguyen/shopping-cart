@@ -4,12 +4,14 @@ import App from './App'
 import './styles/reset.css'
 import './styles/index/index.css'
 import { configureStore } from '@reduxjs/toolkit'
-import productsReducer from './features/products'
+import shopReducer from './features/shop'
+import cartVisibilityReducer from './features/cart_visibility'
 import { Provider } from 'react-redux'
 
 const store = configureStore({
   reducer: {
-    products: productsReducer,
+    shop: shopReducer,
+    cartVisibility: cartVisibilityReducer,
   },
 })
 
