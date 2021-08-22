@@ -1,3 +1,3 @@
-#
+# shopping-cart
 
-[demo](https://nguyen-thanh-luan-github.github.io/.../)
+[demo](https://thanh-luan-nguyen.github.io/shopping-cart/)

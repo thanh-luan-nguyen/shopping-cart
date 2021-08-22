@@ -6,23 +6,23 @@ export default function NavBar() {
   return (
     <Wrapper>
       <section>
-        <Link to='/' className='brand'>
+        <Link to='/shopping-cart' className='brand'>
           Shoptastic
         </Link>
 
         <ul>
           <li>
-            <NavLink exact to='/' activeClassName='selected'>
+            <NavLink exact to='/shopping-cart' activeClassName='selected'>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink exact to='/products' activeClassName='selected'>
+            <NavLink exact to='/shopping-cart/products' activeClassName='selected'>
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink exact to='/contact' activeClassName='selected'>
+            <NavLink exact to='/shopping-cart/contact' activeClassName='selected'>
               Contact
             </NavLink>
           </li>

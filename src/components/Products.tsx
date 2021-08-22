@@ -44,10 +44,10 @@ export default function Products() {
       <div className='content'>
         <div className='products'>{renderProducts}</div>
         <div className='pagination'>
-          <Link to='/products'>
+          <Link to='/shopping-cart/products'>
             <button className={`${page === null && 'active'}`}>1</button>
           </Link>
-          <Link to='/products?page=2'>
+          <Link to='/shopping-cart/products?page=2'>
             <button className={`${page === '2' && 'active'}`}>2</button>
           </Link>
         </div>
