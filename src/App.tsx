@@ -10,6 +10,7 @@ import { SET_PRODUCTS } from './features/shop'
 import styled from 'styled-components'
 import Cart from './components/Cart'
 import Screen from './components/Screen'
+import ProductDetails from './components/ProductDetails'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -29,6 +30,11 @@ export default function App() {
         <Switch>
           <Route exact path='/shopping-cart/' component={Home} />
           <Route exact path='/shopping-cart/products' component={Products} />
+          <Route
+            exact
+            path='/shopping-cart/products/:id'
+            component={ProductDetails}
+          />
           <Route exact path='/shopping-cart/contact' component={Contact} />
         </Switch>
         <Cart visibility={visibility} />

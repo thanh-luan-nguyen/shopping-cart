@@ -5,6 +5,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from '../features/shop'
 
 export default function Cart({ visibility }: { visibility: boolean }) {
   const dispatch = useDispatch()
+  
   const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
   const cartItems = useSelector(({ shop }: { shop: any }) => shop.value.cart)
 
@@ -24,7 +25,7 @@ export default function Cart({ visibility }: { visibility: boolean }) {
                 dispatch(REMOVE_FROM_CART(i.id))
               }}
             ></i>
-            {i.quantity}
+            <span>{i.quantity}</span>
             <i
               className='far fa-plus-square'
               onClick={() => {
@@ -66,12 +67,13 @@ const Wrapper = styled('aside')<{ visibility: number }>`
   bottom: 0;
   height: 100vh;
   width: 30rem;
+  max-width: 100%;
   padding: 1rem;
-  transform: translateX(${props => (props.visibility ? '0' : '30rem')});
   z-index: 200;
   overflow-y: auto;
   background-color: white;
-  transition: transform 0.5s ease-in-out;
+  margin-right: ${props => (props.visibility ? '0' : '-30rem')};
+  transition: 0.5s ease-in-out;
   i {
     font-size: 2rem;
     &:hover {
@@ -101,8 +103,12 @@ const Wrapper = styled('aside')<{ visibility: number }>`
         .quantity {
           display: flex;
           align-items: center;
+          span {
+            width: 1rem;
+            text-align: center;
+          }
           i {
-            margin-inline: 1.3rem;
+            margin-inline: 1.2rem;
             font-size: 1.5rem;
             &:hover {
               color: #0080009b;
@@ -114,7 +120,7 @@ const Wrapper = styled('aside')<{ visibility: number }>`
         }
         .sub-total {
           text-align: center;
-          width: 50%;
+          width: 55%;
           border-top: 1px solid grey;
           padding-top: 0.8rem;
           line-height: 1.2;
@@ -137,6 +143,7 @@ const Wrapper = styled('aside')<{ visibility: number }>`
   }
   button {
     width: 100%;
+    border-radius: 5px;
     color: white;
     border: none;
     background-color: black;

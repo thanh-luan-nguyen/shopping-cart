@@ -4,7 +4,7 @@ import { css } from 'styled-components'
 const globalValues = {
   media_query_mobile_length: '580px',
   navbar_content_max_width: '1400px',
-  main_body_height: 'calc(100% - 7rem)',
+  main_body_height: 'calc(100% - 6rem)',
   useQuery: () => {
     return new URLSearchParams(useLocation().search)
   },
@@ -22,7 +22,7 @@ const globalValues = {
   button_hover_effect: css`
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
+      transform: scale(1.03);
       transition: 250ms ease;
     }
   `,

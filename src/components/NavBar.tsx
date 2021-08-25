@@ -61,7 +61,7 @@ const Wrapper = styled('nav')<{ numOfItems: number }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     a.brand {
       font-family: 'Corben', cursive;
       font-weight: 700;
@@ -71,7 +71,7 @@ const Wrapper = styled('nav')<{ numOfItems: number }>`
     }
     ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       width: 27rem;
       li {
@@ -118,7 +118,7 @@ const Wrapper = styled('nav')<{ numOfItems: number }>`
     &::after {
       content: '';
       position: absolute;
-      bottom: -2.55rem;
+      bottom: -2.05rem;
       right: 0;
       width: 100%;
       height: 0.2rem;

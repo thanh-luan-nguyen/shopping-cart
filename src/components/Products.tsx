@@ -5,12 +5,14 @@ import styled from 'styled-components'
 import globalValues from '../utils/globalValues'
 import Footer from './Footer'
 
+import bg_img from '../utils/wallpaper.jpg'
+
 export default function Products() {
-  const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
   const dispatch = useDispatch()
-  /* query */
-  const page = globalValues.useQuery().get('page')
-  /* query END */
+
+  /* query */ const page = globalValues.useQuery().get('page')
+
+  const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
   const renderProducts = products
     .filter((p: any, i: number) => (page ? i > 5 : i <= 5))
     .map((p: any) => (
@@ -20,14 +22,18 @@ export default function Products() {
         </div>
         <div className='info'>
           <figcaption>
-            {p.title}
+            <Link to={`/shopping-cart/products/${p.id}`}>{p.title}</Link>
             <span>${p.price}</span>
           </figcaption>
 
           <div>
-            <button>View details</button>
+            <Link to={`/shopping-cart/products/${p.id}`}>
+              <button>
+                <i className='fas fa-info-circle'></i> View details
+              </button>
+            </Link>
             <button onClick={() => dispatch(ADD_TO_CART(p.id))}>
-              Add to cart
+              <i className='fas fa-cart-plus'></i> Add to cart
             </button>
           </div>
         </div>
@@ -70,6 +76,9 @@ const Wrapper = styled.div`
       @media (max-width: 880px) {
         grid-template-columns: repeat(2, 1fr);
       }
+      @media (max-width: 490px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       @media (max-width: ${globalValues.media_query_mobile_length}) {
         row-gap: 1rem;
       }
@@ -78,11 +87,14 @@ const Wrapper = styled.div`
         margin-inline: auto;
         border-radius: 10px;
         border: #c3c3c3 1px solid;
-        width: 19rem;
+        width: 20rem;
         height: 27rem;
         @media (max-width: ${globalValues.media_query_mobile_length}) {
           row-gap: 1rem;
           width: 17rem;
+        }
+        @media (max-width: 490px) {
+          width: 21rem;
         }
         .image {
           height: 15rem;
@@ -106,10 +118,17 @@ const Wrapper = styled.div`
         .info {
           padding: 1.3rem 1rem 1rem;
           figcaption {
-            font-size: 1.1rem;
-            font-weight: 700;
             height: 6rem;
-            line-height: 1.2;
+            a {
+              text-decoration: none;
+              color: black;
+              font-weight: 700;
+              font-size: 1.1rem;
+              line-height: 1.2;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
             span {
               font-size: 1rem;
               margin-top: 0.5rem;
@@ -130,14 +149,23 @@ const Wrapper = styled.div`
               font-size: inherit;
               border: none;
               border-radius: 5px;
-              padding: 0.8rem 1.2rem;
+              padding: 0.8rem 0.9rem;
               @media (max-width: ${globalValues.media_query_mobile_length}) {
-                padding: 0.7rem 0.9rem;
+                padding: 0.8rem 0.5rem;
                 font-weight: 500;
+              }
+              @media (max-width: 490px) {
+                padding: 0.9rem 1.3rem;
               }
               &:hover {
                 cursor: pointer;
                 background-color: #000000b0;
+              }
+              &:last-of-type {
+                font-size: 0.9rem;
+              }
+              i {
+                margin-right: 0.3rem;
               }
             }
           }

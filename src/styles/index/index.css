@@ -36,16 +36,4 @@ html {
     font-size: 70%;
   }
 }
-
-@media (max-width: 480px) {
-  html {
-    font-size: 60%;
-  }
-}
-
-@media (max-width: 320px) {
-  html {
-    font-size: 50%;
-  }
-}
 /*# sourceMappingURL=index.css.map */

@@ -22,6 +22,8 @@ const Wrapper = styled('div')<{ visibility: number }>`
   width: 100vw;
   background-color: #0000007a;
   z-index: 100;
-  transform: translateX(${props => (props.visibility ? '0' : '-100vw')});
-  transition: transform 0.5s ease-in-out;
+  margin-left: ${props => (props.visibility ? '0' : '-100vw')};
+  transition: 0.5s ease-in-out;
+  media {
+  }
 `
