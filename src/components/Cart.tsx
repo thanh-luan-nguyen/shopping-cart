@@ -90,7 +90,7 @@ const Wrapper = styled('aside')<{ visibility: number }>`
       justify-content: space-between;
       img {
         /* fix cart !!!!!!!!!???????????? */
-        width: 10rem;
+        width: auto;
       }
       aside {
         width: 15rem;
