@@ -5,8 +5,6 @@ import styled from 'styled-components'
 import globalValues from '../utils/globalValues'
 import Footer from './Footer'
 
-import bg_img from '../utils/wallpaper.jpg'
-
 export default function Products() {
   const dispatch = useDispatch()
 

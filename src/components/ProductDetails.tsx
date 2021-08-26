@@ -8,7 +8,7 @@ import { ADD_TO_CART } from '../features/shop'
 export default function ProductDetails() {
   const { id }: { id: string } = useParams()
   const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
-  const product = products.find((p: any) => p.id == id)
+  const product = products.find((p: any) => p.id.toString() === id)
 
   const dispatch = useDispatch()
 

@@ -17,7 +17,7 @@ export default function Cart({ visibility }: { visibility: boolean }) {
         <img src={product.image} alt={product.title} />
         <aside>
           <h5>{product.title.slice(0, 20)}...</h5>
-          <div className='price'>${product.price}</div>
+          <div>${product.price}</div>
           <div className='quantity'>
             <i
               className='far fa-minus-square'
@@ -89,8 +89,7 @@ const Wrapper = styled('aside')<{ visibility: number }>`
       display: flex;
       justify-content: space-between;
       img {
-        /* fix cart !!!!!!!!!???????????? */
-        width: auto;
+        width: 9rem;
       }
       aside {
         width: 15rem;
@@ -100,8 +99,6 @@ const Wrapper = styled('aside')<{ visibility: number }>`
         h5 {
           font-weight: 700;
           font-size: 1.1rem;
-        }
-        .price {
         }
         .quantity {
           display: flex;
