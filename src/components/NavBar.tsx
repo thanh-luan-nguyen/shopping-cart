@@ -75,18 +75,20 @@ const Wrapper = styled('nav')<{ numOfItems: number }>`
       align-items: center;
       width: 27rem;
       li {
+        /* fix cart circle ip 6s ??????????????????????????????????????????? */
+        /* flex-shrink: 0; */
         a {
           color: white;
           text-decoration: none;
           font-size: 1.4rem;
           &:hover {
             color: #9b9b9b;
-            /* text-shadow: 0 0 3px white; */
           }
         }
         .cart {
           height: 3rem;
-          aspect-ratio: 1/1;
+          width: 3rem;
+          /* aspect-ratio: 1/1; */
           background-color: white;
           border-radius: 50%;
           display: grid;
