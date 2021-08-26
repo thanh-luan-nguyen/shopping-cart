@@ -88,7 +88,10 @@ const Wrapper = styled('aside')<{ visibility: number }>`
       padding: 0.8rem 1.3rem;
       display: flex;
       justify-content: space-between;
-      /* img {} */
+      img {
+        /* fix cart !!!!!!!!!???????????? */
+        width: 10rem;
+      }
       aside {
         width: 15rem;
         display: grid;
