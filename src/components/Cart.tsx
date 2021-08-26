@@ -5,7 +5,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from '../features/shop'
 
 export default function Cart({ visibility }: { visibility: boolean }) {
   const dispatch = useDispatch()
-  
+
   const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
   const cartItems = useSelector(({ shop }: { shop: any }) => shop.value.cart)
 
@@ -84,11 +84,11 @@ const Wrapper = styled('aside')<{ visibility: number }>`
     margin-top: 1rem;
     .item {
       height: 11rem;
+      width: 100%;
       padding: 0.8rem 1.3rem;
       display: flex;
       justify-content: space-between;
-      img {
-      }
+      /* img {} */
       aside {
         width: 15rem;
         display: grid;
