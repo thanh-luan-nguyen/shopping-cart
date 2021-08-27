@@ -8,9 +8,12 @@ import Footer from './Footer'
 export default function Products() {
   const dispatch = useDispatch()
 
-  /* query */ const page = globalValues.useQuery().get('page')
+  /* query */
+  const page = globalValues.useQuery().get('page')
 
   const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
+  console.log(products)
+
   const renderProducts = products
     .filter((p: any, i: number) => (page ? i > 5 : i <= 5))
     .map((p: any) => (

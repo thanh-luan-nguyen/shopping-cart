@@ -13,13 +13,6 @@ import Screen from './components/Screen'
 import ProductDetails from './components/ProductDetails'
 
 export default function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    axios('https://fakestoreapi.com/products')
-      .then(({ data }) => dispatch(SET_PRODUCTS(data)))
-      .catch(err => console.dir(err))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
   const visibility: boolean = useSelector(
     ({ cartVisibility }: { cartVisibility: any }) => cartVisibility.value
   )
