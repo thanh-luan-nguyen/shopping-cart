@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ADD_TO_CART } from '../features/shop'
 import styled from 'styled-components'
 import globalValues from '../utils/globalValues'
@@ -8,8 +8,12 @@ import Footer from './Footer'
 export default function Products() {
   const dispatch = useDispatch()
 
-  /* query */
-  const page = globalValues.useQuery().get('page')
+  /* QUERY */
+  const useQuery = () => {
+    return new URLSearchParams(useLocation().search)
+  }
+  const page = useQuery().get('page')
+  /* QUERY ENDS */
 
   const products = useSelector(({ shop }: { shop: any }) => shop.value.products)
   console.log(products)

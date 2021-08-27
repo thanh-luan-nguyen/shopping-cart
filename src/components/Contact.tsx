@@ -185,4 +185,5 @@ const ContactWrapper = styled.div`
       }
     }
   }
+  ${globalValues.page_switch}
 `
