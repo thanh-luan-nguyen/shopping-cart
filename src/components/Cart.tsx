@@ -84,12 +84,13 @@ const Wrapper = styled('aside')<{ visibility: number }>`
     margin-top: 1rem;
     .item {
       height: 11rem;
-      width: 100%;
+      /* fix image ????? */
+      max-width: 100%;
       padding: 0.8rem 1.3rem;
       display: flex;
       justify-content: space-between;
       img {
-        width: 9rem;
+        /* width: 9rem; */
       }
       aside {
         width: 15rem;
